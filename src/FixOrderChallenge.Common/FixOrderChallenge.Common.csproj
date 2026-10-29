@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="QuickFIXn.Core" Version="1.13.1" />
+    <PackageReference Include="QuickFIXn.FIX4.4" Version="1.13.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="spec\FIX44.xml" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
