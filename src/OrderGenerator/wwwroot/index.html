@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OrderGenerator</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>OrderGenerator</h1>
+      <span id="fix-status" class="badge">verificando FIX…</span>
+    </header>
+
+    <form id="order-form" novalidate>
+      <label>Símbolo
+        <select name="symbol" required>
+          <option value="PETR4">PETR4</option>
+          <option value="VALE3">VALE3</option>
+          <option value="VIIA4">VIIA4</option>
+        </select>
+      </label>
+
+      <fieldset>
+        <legend>Lado</legend>
+        <label class="inline"><input type="radio" name="side" value="Buy" checked> Compra</label>
+        <label class="inline"><input type="radio" name="side" value="Sell"> Venda</label>
+      </fieldset>
+
+      <label>Quantidade
+        <input name="quantity" type="number" min="1" max="99999" step="1" required>
+      </label>
+      <small class="error" data-for="quantity"></small>
+
+      <label>Preço
+        <input name="price" type="number" min="0.01" max="999.99" step="0.01" required>
+      </label>
+      <small class="error" data-for="price"></small>
+
+      <button type="submit">Enviar ordem</button>
+    </form>
+
+    <section id="result" hidden>
+      <h2>Resposta</h2>
+      <div id="result-card"></div>
+    </section>
+
+    <section id="history" hidden>
+      <h2>Histórico</h2>
+      <table>
+        <thead><tr><th>Símbolo</th><th>Lado</th><th>Qtd</th><th>Preço</th><th>Resultado</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
